@@ -1,3 +1,4 @@
+//Stack implementation using structure
 #include<stdio.h>
 #include<conio.h>
 #include<process.h>
