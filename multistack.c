@@ -24,7 +24,7 @@ int  popA( )//pop for a
    if(topA==-1)                                                 
         {
         printf("\nunderflow in StackA");
-        return -999; 
+        return -111; 
 		}
 	 else 
 	 {
@@ -41,7 +41,7 @@ void displayA ( )//display for a
         return;  
 		}
       for (i=topA; i>=0; i--)
-	  printf("   %d", stack[i]);
+	  printf("stackA[%d]=%d\n", i,stack[i]);
     }
 
 void  pushB (int data)//push for b
@@ -64,7 +64,7 @@ int  popB( )//pop for b
    if(topB==MAX)
     {
       printf("\nunderflow in StackB");
-      return -999;
+      return -111;
 	 }
 	else
 	{
@@ -82,15 +82,16 @@ void displayB ( )//display for stackb
          return;
 		 }
       for (i=topB; i<MAX; i++)
-	  printf("   %d", stack[i]);
+	  printf("StackB[%d]=%d\n",i,stack[i]);
     }
 
 
 void main ()
  { 
-  int no, ch;
+  int data, ch;
    do
     {
+     printf("\nMenu:-");
 	 printf ("\n 1 pushA");
 	 printf ("\n 2 popA");
 	 printf ("\n 3 showA");
@@ -102,23 +103,23 @@ void main ()
 	 scanf ("%d", &ch);
 	 switch (ch)
 	  {
-	   case 1 : printf("\n Enter no : ");
-		        scanf("%d", &no);
-		        pushA(no);
+	   case 1 : printf("\n Enter data : ");
+		        scanf("%d", &data);
+		        pushA(data);
 		         break;
-	   case 2 : no = popA( );
-		        if (no != -999)
-		       printf ("\n % d poped ",no);
+	   case 2 : data = popA( );
+		        if (data != -111)
+		       printf ("\n % d poped ",data);
 		       break;
 	  case 3 : displayA();
 		       break;
-	  case 4 : printf("\n Enter no : ");
-		       scanf("%d", &no);
-		       pushB(no);
+	  case 4 : printf("\n Enter data : ");
+		       scanf("%d", &data);
+		       pushB(data);
 		       break;
-	  case 5 : no = popB( );
-		       if (no != -999)
-		       printf ("\n % d poped ",no);
+	  case 5 : data = popB( );
+		       if (data != -111)
+		       printf ("\n % d poped ",data);
 		       break;
 	  case 6 : displayB();
 		       break;
